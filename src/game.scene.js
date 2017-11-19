@@ -15,7 +15,7 @@ var GameLayer = cc.Layer.extend({
         this.trunk = new cc.Sprite(res.trunk_png);
         this.trunk.attr(center);
 
-        this.panda = new cc.Sprite(res.panda_png);
+        this.panda = new PandaNode;
         this.panda.attr({x:center.x+G.PANDA.LEFT_X, y:center.y});
 
         this.addChild(this.bg);
@@ -26,7 +26,7 @@ var GameLayer = cc.Layer.extend({
     }
 });
 
-var HelloWorldScene = cc.Scene.extend({
+var GameScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
         this.addChild(new GameLayer);

@@ -12,6 +12,9 @@
     "modules" : ["cocos2d"],
 
     "jsList" : [
+        "modules/chance.min.js",
+        "src/panda.node.js",
+        "src/tree.node.js",
         "src/game.scene.js"
     ]
 }
