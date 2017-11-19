@@ -1,6 +1,5 @@
 
-var HelloWorldLayer = cc.Layer.extend({
-    sprite:null,
+var GameLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
 
@@ -12,7 +11,16 @@ var HelloWorldLayer = cc.Layer.extend({
 
         this.bg = new cc.Sprite(res.bg_png);
         this.bg.attr(center);
-        this.addChild(this.bg, 0);
+
+        this.trunk = new cc.Sprite(res.trunk_png);
+        this.trunk.attr(center);
+
+        this.panda = new cc.Sprite(res.panda_png);
+        this.panda.attr({x:center.x+G.PANDA.LEFT_X, y:center.y});
+
+        this.addChild(this.bg);
+        this.addChild(this.trunk);
+        this.addChild(this.panda);
 
         return true;
     }
@@ -21,8 +29,7 @@ var HelloWorldLayer = cc.Layer.extend({
 var HelloWorldScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
-        var layer = new HelloWorldLayer();
-        this.addChild(layer);
+        this.addChild(new GameLayer);
     }
 });
 
